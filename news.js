@@ -46,7 +46,7 @@ const displaynewses = (newses) => {
                 <div class="col-md-8">
                     <div class="card-body border-0">
                         <h3 class="card-title">${isAvailable(title)}</h3>
-                        <p class="card-text">${isAvailable(details).slice(0 - 200)}...</p>
+                        <p class="card-text">${isAvailable(details).slice(0 - 200)} ...</p>
                         <div class="row">
                             <div class="col-8 col-lg-4 d-flex align-items-center">
                                 <img src="${isAvailable(author.img)}" alt="" class="img-fluid rounded-circle" height="50" width="50">
