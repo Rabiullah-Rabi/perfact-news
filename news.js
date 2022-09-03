@@ -3,6 +3,7 @@ const loadNews = async (catID) => {
     isLoading(true);
     const url = `https://openapi.programming-hero.com/api/news/category/${catID}`;
     const res = await fetch(url)
+        .catch(error => console.log(error));
     const newses = await res.json();
     displaynewses(newses.data);
 }

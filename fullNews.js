@@ -2,6 +2,7 @@
 const loadDetails = async (newsID) => {
     const url = `https://openapi.programming-hero.com/api/news/${newsID}`;
     const res = await fetch(url)
+        .catch(error => console.log(error));
     const details = await res.json();
     displayDetails(details.data[0]);
 }
