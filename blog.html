@@ -16,7 +16,7 @@
 
     </head>
 
-    <body class="bg-light">
+    <body class="bg-light vh-100 d-flex flex-column justify-content-between">
         <header>
             <!-- Nevbar -->
             <div class="container pt-5">
@@ -26,8 +26,8 @@
                         </h5>
                     </div>
                     <div class="col-6 d-flex justify-content-end align-items-center">
-                        <a href="index.html" class="text-decoration-none fw-bold p-3 text-primary active ">News</a>
-                        <a href="blog.html" class="text-decoration-none fw-bold p-3 text-secondary">Blog</a>
+                        <a href="index.html" class="text-decoration-none fw-bold p-3 text-secondary">News</a>
+                        <a href="blog.html" class="text-decoration-none fw-bold p-3 text-primary active">Blog</a>
                         <a href="inxex.html"><img src="images/Avatar.png" alt="" height="40px" width="40px"></a>
                     </div>
                 </div>
@@ -37,7 +37,68 @@
         <main>
             <section>
                 <div class="container">
+                    <div class="accordion" id="faq">
+                        <!-- Faq item -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="">
+                                <button class="accordion-button fs-4 collapsed " type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne" aria-expanded="false"
+                                    aria-controls="collapseOne">Difference between var, let and const keywords in
+                                    JavaScript</button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby=""
+                                data-bs-parent="#faq" style="">
+                                <div class="accordion-body text-start">These are a few ways to declare variables. var is
+                                    a legacy one, let and const are new ones, where let is for mutable variable
+                                    reference and const is for immutable reference.
 
+                                    Hoisting is when you use a variable before you define it.
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Faq item -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="">
+                                <button class="accordion-button fs-4 collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    The Difference Between Regular Functions and Arrow Functions
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby=""
+                                data-bs-parent="#faq" style="">
+                                <div class="accordion-body text-start">
+                                    Arrow function is a new feature introduced in ES6 that is a more concise syntax for
+                                    writing function expressions. While both regular JavaScript functions and arrow
+                                    functions work in a similar manner.
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Faq item -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="">
+                                <button class="accordion-button fs-4 collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseThree" aria-expanded="false"
+                                    aria-controls="collapseThree">What is Template strings
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby=""
+                                data-bs-parent="#faq" style="">
+                                <div class="accordion-body text-start ">
+                                    <p>
+                                        Template strings are literals delimited with backtick (`) characters, allowing
+                                        for multi-line strings, for string interpolation with embedded expressions, and
+                                        for special constructs called tagged templates.
+
+                                        Template strings are used most commonly for string interpolation (to create
+                                        strings by doing substitution of placeholders). However, a tagged template
+                                        literal may not result in a string; it can be used with a custom tag function to
+                                        perform whatever operations you want on the different parts of the template
+                                        literal.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
         </main>

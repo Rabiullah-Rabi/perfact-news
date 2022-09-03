@@ -12,7 +12,7 @@ const displayCategories = (categories) => {
         const listItem = document.createElement('li');
         listItem.classList.add('nav-item');
         listItem.innerHTML = `
-        <a class="nav-link text-secondary text-center fw-bold " href="#" onclick="loadNews('${category.category_id}')">${category.category_name}</a>
+        <a class="nav-link text-center fw-bold " href="#" onclick="loadNews('${category.category_id}')">${category.category_name}</a>
         `
         categoryLists.appendChild(listItem);
     });

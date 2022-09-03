@@ -35,7 +35,6 @@ const displaynewses = (newses) => {
     //news card
     newses.forEach(news => {
         const { _id, image_url, title, details, author, total_view } = news;
-        console.log(news);
         const newsitem = document.createElement('div');
         newsitem.innerHTML = `
         <div class="card mb-5 border-0 shadow rounded p-3" onclick="loadDetails('${_id}')" data-bs-toggle="modal" data-bs-target="#fullNews">
