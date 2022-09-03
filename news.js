@@ -25,17 +25,20 @@ const displaynewses = (newses) => {
     const totalNews = newses.length;
     //message for no news found
     if (totalNews > 0) {
-        message.innerText = `${totalNews} items found`;
+        message.innerText = `${totalNews} News found`;
     }
     else {
-        message.innerText = `No Item found`;
+        message.innerText = `No News found`;
         const notFound = document.createElement('div')
         notFound.innerHTML = `<img src="images/product-not-found.jpg" class="img-fluid rounded h-100" alt="...">`
         newsContainer.appendChild(notFound)
     }
+    //sort bt views
+    newses.sort((a, b) => b.total_view - a.total_view);
     //news card
     newses.forEach(news => {
         const { _id, image_url, title, details, author, total_view } = news;
+
         const newsitem = document.createElement('div');
         newsitem.innerHTML = `
         <div class="card mb-5 border-0 shadow rounded p-3" onclick="loadDetails('${_id}')" data-bs-toggle="modal" data-bs-target="#fullNews">
