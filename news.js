@@ -1,22 +1,59 @@
-//Load category
-const loadCategory = async () => {
-    const url = `https://openapi.programming-hero.com/api/news/categories`;
+//Load news
+const loadNews = async () => {
+    const url = `https://openapi.programming-hero.com/api/news/category/01`;
     const res = await fetch(url)
-    const categories = await res.json();
-    displayCategories(categories.data.news_category);
+    const newses = await res.json();
+    displaynewses(newses.data);
 }
-const displayCategories = (categories) => {
-    const categoryLists = document.getElementById('category-list');
-    categories.forEach(category => {
-        const listItem = document.createElement('li');
-        listItem.classList.add('nav-item');
-        listItem.innerHTML = `
-        <a class="nav-link text-secondary fw-bold" href="#">${category.category_name}</a>
+//display news news
+const displaynewses = (newses) => {
+    const newsContainer = document.getElementById('all-news');
+    //Count news with category
+    const message = document.getElementById('message');
+    const totalNews = newses.length;
+    if (totalNews > 0) {
+        message.innerText = `${totalNews} items found`;
+    }
+    else {
+        message.innerText = `No Item found`;
+    }
+    newses.forEach(news => {
+        const newsitem = document.createElement('div');
+        newsitem.innerHTML = `
+        <div class="card mb-5 border-0 shadow rounded p-3">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="${news.image_url}" class="img-fluid rounded h-100" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body border-0">
+                        <h3 class="card-title">${news.title}</h3>
+                        <p class="card-text">${news.details.slice(0 - 200)}...</p>
+                        <div class="row">
+                            <div class="col-4 d-flex align-items-center">
+                                <img src="${news.author.img}" alt="" class="img-fluid rounded-circle" height="50" width="50">
+                                <div class="ms-2">
+                                    <h6>${news.author.name}</h6>
+                                    <p class="mb-0">${news.author.published_date}</p>
+                                </div>
+                            </div>
+                            <div class="col-2 d-flex align-items-center justify-content-center">
+                                <img src="images/carbon_view.png" alt="" height="20">
+                                <p class="ms-3 mb-0 fw-bold">${news.total_view}</p>
+                            </div>
+                            <div class="col-3 d-flex align-items-center justify-content-center">
+                                <img src="images/Group 116134.png" alt="" class="img-fluid">
+                            </div>
+                            <div class="col-3 d-flex align-items-center justify-content-end">
+                                <img src="images/bi_arrow-right-short.png" alt="" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         `
-        categoryLists.appendChild(listItem);
-        // console.log(category.category_name)
-
-
+        newsContainer.appendChild(newsitem);
     });
 }
-loadCategory();
+loadNews();
