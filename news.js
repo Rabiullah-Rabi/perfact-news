@@ -41,14 +41,14 @@ const displaynewses = (newses) => {
         <div class="card mb-5 border-0 shadow rounded p-3" onclick="loadDetails('${_id}')" data-bs-toggle="modal" data-bs-target="#fullNews">
             <div class="row g-0">
                 <div class="col-md-4">
-                    <img src="${isAvailable(image_url)}" class="img-fluid rounded h-100" alt="...">
+                    <img src="${isAvailable(image_url)}" class="img-fluid rounded h-100 h-md-auto" alt="...">
                 </div>
                 <div class="col-md-8">
                     <div class="card-body border-0">
                         <h3 class="card-title">${isAvailable(title)}</h3>
                         <p class="card-text">${isAvailable(details).slice(0 - 200)}...</p>
                         <div class="row">
-                            <div class="col-4 d-flex align-items-center">
+                            <div class="col-8 col-lg-4 d-flex align-items-center">
                                 <img src="${isAvailable(author.img)}" alt="" class="img-fluid rounded-circle" height="50" width="50">
                                 <div class="ms-2">
                                     <h6>${isAvailable((author.name))}</h6>
@@ -59,10 +59,10 @@ const displaynewses = (newses) => {
                                 <img src="images/carbon_view.png" alt="" height="20">
                                 <p class="ms-3 mb-0 fw-bold">${isAvailable(total_view)}</p>
                             </div>
-                            <div class="col-3 d-flex align-items-center justify-content-center">
+                            <div class="col-6 col-lg-3 d-flex align-items-center justify-content-center">
                                 <img src="images/Group 116134.png" alt="" class="img-fluid">
                             </div>
-                            <div class="col-3 d-flex align-items-center justify-content-end">
+                            <div class="col-6 col-lg-3 d-flex align-items-center justify-content-end">
                                 <img src="images/bi_arrow-right-short.png" alt="" class="img-fluid">
                             </div>
                         </div>
