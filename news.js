@@ -1,6 +1,7 @@
 //Load news
-const loadNews = async () => {
-    const url = `https://openapi.programming-hero.com/api/news/category/01`;
+const loadNews = async (catID) => {
+    isLoading(true);
+    const url = `https://openapi.programming-hero.com/api/news/category/${catID}`;
     const res = await fetch(url)
     const newses = await res.json();
     displaynewses(newses.data);
@@ -8,6 +9,7 @@ const loadNews = async () => {
 //display news news
 const displaynewses = (newses) => {
     const newsContainer = document.getElementById('all-news');
+    newsContainer.innerHTML = '';
     //Count news with category
     const message = document.getElementById('message');
     const totalNews = newses.length;
@@ -16,11 +18,14 @@ const displaynewses = (newses) => {
     }
     else {
         message.innerText = `No Item found`;
+        const notFound = document.createElement('div')
+        notFound.innerHTML = `<img src="images/product-not-found.jpg" class="img-fluid rounded h-100" alt="...">`
+        newsContainer.appendChild(notFound)
     }
     newses.forEach(news => {
         const newsitem = document.createElement('div');
         newsitem.innerHTML = `
-        <div class="card mb-5 border-0 shadow rounded p-3">
+        <div class="card mb-5 border-0 shadow rounded p-3" onclick="loadDetails('${news._id}')" data-bs-toggle="modal" data-bs-target="#fullNews">
             <div class="row g-0">
                 <div class="col-md-4">
                     <img src="${news.image_url}" class="img-fluid rounded h-100" alt="...">
@@ -55,5 +60,17 @@ const displaynewses = (newses) => {
         `
         newsContainer.appendChild(newsitem);
     });
+    isLoading(false);
 }
-loadNews();
+
+// Loading Spinner
+const isLoading = (loading) => {
+    const spinnerContainer = document.getElementById('spinner');
+    if (loading) {
+        spinnerContainer.classList.remove('d-none');
+    }
+    else {
+        spinnerContainer.classList.add('d-none');
+    }
+}
+loadNews('08');
