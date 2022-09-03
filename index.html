@@ -16,7 +16,7 @@
 <body class="bg-light">
     <header>
         <!-- Nevbar -->
-        <div class="container py-5">
+        <div class="container pt-5">
             <div class="row d-flex justify-content-between">
                 <div class="logo col-4">
                     <h5 class="text-primary"><span class="bg-primary text-white p-2 me-3 rounded">Perfect</span>News
@@ -30,12 +30,67 @@
             </div>
             <hr>
         </div>
+        <!-- Category List -->
+        <div class="container py-3" id="category-container">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link text-secondary fw-bold active" aria-current="page" href="#">Active</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-secondary fw-bold" href="#">Link</a>
+                </li>
+            </ul>
+        </div>
+        <!-- Message Container -->
+        <div class="container bg-white p-3">
+            <h3 id="message">Not Found</h3>
+        </div>
     </header>
     <main>
-
+        <section class="my-5">
+            <div class="container">
+                <div class="row">
+                    <div class="card mb-3 border-0 shadow ">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="..." class="img-fluid rounded-start" alt="...">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body border-0">
+                                    <h2 class="card-title">Card title</h2>
+                                    <p class="card-text">This is a wider card with supporting text below as a natural
+                                        lead-in to additional content. This content is a little bit longer.</p>
+                                    <div class="row">
+                                        <div class="col-3 d-flex align-items-center">
+                                            <img src="images/Avatar.png" alt="">
+                                            <div class="ms-2">
+                                                <h6>Author Name</h6>
+                                                <p class="mb-0">Publish date</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-3 d-flex align-items-center justify-content-center">
+                                            <img src="images/carbon_view.png" alt="">
+                                            <p class="ms-3 mb-0 fw-bold">1.5M</p>
+                                        </div>
+                                        <div class="col-3 d-flex align-items-center justify-content-center">
+                                            <img src="images/Group 116134.png" alt="" class="img-fluid">
+                                        </div>
+                                        <div class="col-3 d-flex align-items-center justify-content-end">
+                                            <img src="images/bi_arrow-right-short.png" alt="" class="img-fluid">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
     <footer>
-        <!-- place footer here -->
+        <div class="container-fluid py-4 bg-white">
+            <p class="text-center mb-0">Copyright 2021 News Portal</p>
+        </div>
     </footer>
     <!-- Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
