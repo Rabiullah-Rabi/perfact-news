@@ -1,4 +1,6 @@
-/* .active{
-color: blue !important;
-background-color: black;
-} */
+
+.nav-link:focus, .nav-link:hover {
+    color: #0d6efd;
+    background: #0000ff17;
+    border-radius: 5px;
+}
